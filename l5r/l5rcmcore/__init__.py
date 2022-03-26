@@ -234,19 +234,14 @@ class L5RCMCore(QtWidgets.QMainWindow):
         if is_shugenja:
             self.write_pdf(
                 'sheet_shugenja.pdf', exporters.FDFExporterShugenja())
-            if kiho_count > 0:
-                self.write_pdf('sheet_monk.pdf', exporters.FDFExporterMonk())
         elif is_bushi:
             self.write_pdf('sheet_bushi.pdf', exporters.FDFExporterBushi())
         elif is_samurai_monk or is_ninja:
             self.write_pdf('sheet_bushi.pdf', exporters.FDFExporterBushi())
-            if kiho_count > 0:
-                self.write_pdf('sheet_monk.pdf', exporters.FDFExporterMonk())
         elif is_monk:
             self.write_pdf('sheet_monk.pdf', exporters.FDFExporterMonk())
         elif is_courtier:
-            self.write_pdf(
-                'sheet_courtier.pdf', exporters.FDFExporterCourtier())
+            self.write_pdf('sheet_courtier.pdf', exporters.FDFExporterCourtier())
 
         if kiho_count > 0 and not(is_monk):
             self.write_pdf('sheet_monk.pdf', exporters.FDFExporterMonk())
